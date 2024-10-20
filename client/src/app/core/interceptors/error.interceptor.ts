@@ -3,11 +3,11 @@ import { inject } from '@angular/core';
 import { routes } from '../../app.routes';
 import { NavigationExtras, Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
-import { SnachbarService } from '../services/snachbar.service';
+import { SnackbarService } from '../services/snackbar.service';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
-  const snackbar = inject(SnachbarService)
+  const snackbar = inject(SnackbarService)
 
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
